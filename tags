@@ -1,0 +1,86 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+*	src/css/app.css	/^*,$/;"	s
+*::after	src/css/app.css	/^*::after,$/;"	s
+*::before	src/css/app.css	/^*::before {$/;"	s
+.btn	src/css/app.css	/^.btn {$/;"	c
+.btn--danger	src/css/app.css	/^.btn--danger {$/;"	c
+.btn--danger:hover	src/css/app.css	/^.btn--danger:hover {$/;"	c
+.btn--primary	src/css/app.css	/^.btn--primary {$/;"	c
+.btn--primary:hover	src/css/app.css	/^.btn--primary:hover {$/;"	c
+.ingredient-grid	src/css/app.css	/^.ingredient-grid {$/;"	c
+.mr-1	src/css/app.css	/^.mr-1 {$/;"	c
+.recipe	src/css/app.css	/^.recipe {$/;"	c
+.recipe-list	src/css/app.css	/^.recipe-list {$/;"	c
+.recipe-list__add-recipe-btn-container	src/css/app.css	/^.recipe-list__add-recipe-btn-container {$/;"	c
+.recipe:last-child	src/css/app.css	/^.recipe:last-child {$/;"	c
+.recipe__header	src/css/app.css	/^.recipe__header {$/;"	c
+.recipe__label	src/css/app.css	/^.recipe__label {$/;"	c
+.recipe__title	src/css/app.css	/^.recipe__title {$/;"	c
+.recipe__value	src/css/app.css	/^.recipe__value {$/;"	c
+0	package.json	/^      ">0.2%",$/;"	s	array:browserslist.production
+0	package.json	/^      "last 1 chrome version",$/;"	s	array:browserslist.development
+0	package.json	/^      "react-app",$/;"	s	array:eslintConfig.extends
+1	package.json	/^      "last 1 firefox version",$/;"	s	array:browserslist.development
+1	package.json	/^      "not dead",$/;"	s	array:browserslist.production
+1	package.json	/^      "react-app\/jest"$/;"	s	array:eslintConfig.extends
+2	package.json	/^      "last 1 safari version"$/;"	s	array:browserslist.development
+2	package.json	/^      "not op_mini all"$/;"	s	array:browserslist.production
+@testing-library/jest-dom	package.json	/^    "@testing-library\/jest-dom": "^5.11.5",$/;"	s	object:dependencies
+@testing-library/react	package.json	/^    "@testing-library\/react": "^11.1.1",$/;"	s	object:dependencies
+@testing-library/user-event	package.json	/^    "@testing-library\/user-event": "^12.2.0",$/;"	s	object:dependencies
+Advanced Configuration	README.md	/^### Advanced Configuration$/;"	S
+Analyzing the Bundle Size	README.md	/^### Analyzing the Bundle Size$/;"	S
+App	src/App.jsx	/^function App() {$/;"	f
+Available Scripts	README.md	/^## Available Scripts$/;"	s
+Code Splitting	README.md	/^### Code Splitting$/;"	S
+Deployment	README.md	/^### Deployment$/;"	S
+Getting Started with Create React App	README.md	/^# Getting Started with Create React App$/;"	c
+Ingredient	src/component/ingredient.jsx	/^export default function Ingredient({ name, amount }) {$/;"	f
+IngredientList	src/component/ingredientList.jsx	/^export default function IngredientList({ ingredients }) {$/;"	f
+Learn More	README.md	/^## Learn More$/;"	s
+Making a Progressive Web App	README.md	/^### Making a Progressive Web App$/;"	S
+Recipe	src/component/Recipe.jsx	/^export default function Recipe({$/;"	f
+RecipeList	src/component/RecipeList.jsx	/^export default function RecipeList({ recipes, handleRecipeAdd }) {$/;"	f
+`npm run build`	README.md	/^### `npm run build`$/;"	S
+`npm run build` fails to minify	README.md	/^### `npm run build` fails to minify$/;"	S
+`npm run eject`	README.md	/^### `npm run eject`$/;"	S
+`npm start`	README.md	/^### `npm start`$/;"	S
+`npm test`	README.md	/^### `npm test`$/;"	S
+body	src/css/app.css	/^body {$/;"	s
+browserslist	package.json	/^  "browserslist": {$/;"	o
+build	package.json	/^    "build": "react-scripts build",$/;"	s	object:scripts
+cookTime	src/App.jsx	/^      cookTime: "1:00",$/;"	p	class:App.handleRecipeAdd.newRecipe
+dependencies	package.json	/^  "dependencies": {$/;"	o
+development	package.json	/^    "development": [$/;"	a	object:browserslist
+eject	package.json	/^    "eject": "react-scripts eject"$/;"	s	object:scripts
+eslintConfig	package.json	/^  "eslintConfig": {$/;"	o
+extends	package.json	/^    "extends": [$/;"	a	object:eslintConfig
+handleRecipeAdd	src/App.jsx	/^  function handleRecipeAdd() {$/;"	f	function:App
+html	src/css/app.css	/^html {$/;"	s
+id	src/App.jsx	/^      id: uuidv4(),$/;"	p	class:App.handleRecipeAdd.newRecipe
+ingredients	src/App.jsx	/^      ingredients: [$/;"	p	class:App.handleRecipeAdd.newRecipe
+instructions	src/App.jsx	/^      instructions: ["Instr."],$/;"	p	class:App.handleRecipeAdd.newRecipe
+name	package.json	/^  "name": "react-recipe",$/;"	s
+name	src/App.jsx	/^      name: "New",$/;"	p	class:App.handleRecipeAdd.newRecipe
+newRecipe	src/App.jsx	/^    const newRecipe = {$/;"	c	class:App.handleRecipeAdd
+private	package.json	/^  "private": true,$/;"	b
+production	package.json	/^    "production": [$/;"	a	object:browserslist
+react	package.json	/^    "react": "^17.0.1",$/;"	s	object:dependencies
+react-dom	package.json	/^    "react-dom": "^17.0.1",$/;"	s	object:dependencies
+react-scripts	package.json	/^    "react-scripts": "4.0.0",$/;"	s	object:dependencies
+root	public/index.html	/^    <div id="root"><\/div>$/;"	I
+sampleRecipe	src/App.jsx	/^const sampleRecipe = [$/;"	C
+scripts	package.json	/^  "scripts": {$/;"	o
+servings	src/App.jsx	/^      servings: 1,$/;"	p	class:App.handleRecipeAdd.newRecipe
+start	package.json	/^    "start": "react-scripts start",$/;"	s	object:scripts
+test	package.json	/^    "test": "react-scripts test",$/;"	s	object:scripts
+uuid	package.json	/^    "uuid": "^8.3.1",$/;"	s	object:dependencies
+version	package.json	/^  "version": "0.1.0",$/;"	s
+web-vitals	package.json	/^    "web-vitals": "^0.2.4"$/;"	s	object:dependencies

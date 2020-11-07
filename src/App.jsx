@@ -20,9 +20,25 @@ function App() {
         },
       ],
     };
-    setRecipes([...recipes], newRecipe);
+
+    setRecipes([...recipes, newRecipe]);
   }
-  return <RecipeList recipes={recipes} handleRecipeAdd={handleRecipeAdd} />;
+
+  function handleRecipeDelete(id) {
+    setRecipes(
+      recipes.filter((recipe) => {
+        return recipe.id !== id;
+      })
+    );
+  }
+
+  return (
+    <RecipeList
+      recipes={recipes}
+      handleRecipeAdd={handleRecipeAdd}
+      handleRecipeDelete={handleRecipeDelete}
+    />
+  );
 }
 
 const sampleRecipe = [
