@@ -4,9 +4,9 @@ import Ingredient from "./ingredient";
 export default function IngredientList({ ingredients }) {
   const ingredientElements = ingredients.map((ingredient) => {
     return (
-      <ul>
-        <li>
-          <Ingredient key={ingredient.id} {...ingredient} />
+      <ul className="ingredient-grid">
+        <li key={ingredient.id}>
+          <Ingredient {...ingredient} />
         </li>
       </ul>
     );

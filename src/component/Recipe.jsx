@@ -9,27 +9,27 @@ export default function Recipe({
   ingredients,
 }) {
   return (
-    <div>
-      <div>
-        <h1>{name}</h1>
+    <div className="recipe">
+      <div className="recipe__header">
+        <h1 className="recipe__title">{name}</h1>
         <div>
-          <button>Edit</button>
-          <button>Delete</button>
+          <button className="btn btn--primary mr-1">Edit</button>
+          <button className="btn btn--danger mr-1">Delete</button>
         </div>
         <div>
-          <span>Cook Time:</span>
-          <span>{cookTime}</span>
+          <span className="recipe__label">Cook Time:</span>
+          <span className="recipe__value">{cookTime} hour(s)</span>
         </div>
         <div>
-          <span>Servings:</span>
-          <span>{servings}</span>
+          <span className="recipe__label">Servings:</span>
+          <span className="recipe__value">{servings}</span>
         </div>
         <div>
           <span>Instruction:</span>
           <div>
             <ol>
               {instructions.map((instruction) => {
-                return <li>{instruction}</li>;
+                return <li key={instruction}>{instruction}</li>;
               })}
             </ol>
           </div>
