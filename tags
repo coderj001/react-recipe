@@ -12,11 +12,19 @@
 .btn	src/css/app.css	/^.btn {$/;"	c
 .btn--danger	src/css/app.css	/^.btn--danger {$/;"	c
 .btn--danger:hover	src/css/app.css	/^.btn--danger:hover {$/;"	c
+.btn--ing	src/css/app.css	/^.btn--ing {$/;"	c
 .btn--primary	src/css/app.css	/^.btn--primary {$/;"	c
 .btn--primary:hover	src/css/app.css	/^.btn--primary:hover {$/;"	c
 .ingredient-grid	src/css/app.css	/^.ingredient-grid {$/;"	c
 .mr-1	src/css/app.css	/^.mr-1 {$/;"	c
 .recipe	src/css/app.css	/^.recipe {$/;"	c
+.recipe-edit	src/css/app.css	/^.recipe-edit {$/;"	c
+.recipe-edit__details-grid	src/css/app.css	/^.recipe-edit__details-grid {$/;"	c
+.recipe-edit__ingredient-grid	src/css/app.css	/^.recipe-edit__ingredient-grid {$/;"	c
+.recipe-edit__input	src/css/app.css	/^.recipe-edit__input {$/;"	c
+.recipe-edit__label	src/css/app.css	/^.recipe-edit__label {$/;"	c
+.recipe-edit__remove-button	src/css/app.css	/^.recipe-edit__remove-button {$/;"	c
+.recipe-edit__remove-button-contain	src/css/app.css	/^.recipe-edit__remove-button-contain {$/;"	c
 .recipe-list	src/css/app.css	/^.recipe-list {$/;"	c
 .recipe-list__add-recipe-btn-container	src/css/app.css	/^.recipe-list__add-recipe-btn-container {$/;"	c
 .recipe:last-child	src/css/app.css	/^.recipe:last-child {$/;"	c
@@ -43,44 +51,66 @@ Code Splitting	README.md	/^### Code Splitting$/;"	S
 Deployment	README.md	/^### Deployment$/;"	S
 Getting Started with Create React App	README.md	/^# Getting Started with Create React App$/;"	c
 Ingredient	src/component/ingredient.jsx	/^export default function Ingredient({ name, amount }) {$/;"	f
+IngredientEdit	src/component/ingredientEdit.jsx	/^export default function IngredientEdit(props) {$/;"	f
 IngredientList	src/component/ingredientList.jsx	/^export default function IngredientList({ ingredients }) {$/;"	f
+LOCAL_STORAGE_KEY	src/App.jsx	/^const LOCAL_STORAGE_KEY = "cookingWithReact.recipes";$/;"	C
 Learn More	README.md	/^## Learn More$/;"	s
 Making a Progressive Web App	README.md	/^### Making a Progressive Web App$/;"	S
-Recipe	src/component/Recipe.jsx	/^export default function Recipe({$/;"	f
-RecipeList	src/component/RecipeList.jsx	/^export default function RecipeList({ recipes, handleRecipeAdd }) {$/;"	f
+Recipe	src/component/Recipe.jsx	/^export default function Recipe(props) {$/;"	f
+RecipeContext	src/App.jsx	/^export const RecipeContext = createContext();$/;"	C
+RecipeEdit	src/component/RecipeEdit.jsx	/^export default function RecipeEdit({ recipe }) {$/;"	f
+RecipeList	src/component/RecipeList.jsx	/^export default function RecipeList({ recipes }) {$/;"	f
 `npm run build`	README.md	/^### `npm run build`$/;"	S
 `npm run build` fails to minify	README.md	/^### `npm run build` fails to minify$/;"	S
 `npm run eject`	README.md	/^### `npm run eject`$/;"	S
 `npm start`	README.md	/^### `npm start`$/;"	S
 `npm test`	README.md	/^### `npm test`$/;"	S
+amount	src/component/RecipeEdit.jsx	/^      amount: "",$/;"	p	class:RecipeEdit.handleIngredientAdd.newIngredients
 body	src/css/app.css	/^body {$/;"	s
 browserslist	package.json	/^  "browserslist": {$/;"	o
 build	package.json	/^    "build": "react-scripts build",$/;"	s	object:scripts
-cookTime	src/App.jsx	/^      cookTime: "1:00",$/;"	p	class:App.handleRecipeAdd.newRecipe
+cookTime	src/App.jsx	/^      cookTime: "",$/;"	p	class:App.handleRecipeAdd.newRecipe
 dependencies	package.json	/^  "dependencies": {$/;"	o
 development	package.json	/^    "development": [$/;"	a	object:browserslist
 eject	package.json	/^    "eject": "react-scripts eject"$/;"	s	object:scripts
 eslintConfig	package.json	/^  "eslintConfig": {$/;"	o
 extends	package.json	/^    "extends": [$/;"	a	object:eslintConfig
+handleChange	src/component/RecipeEdit.jsx	/^  function handleChange(changes) {$/;"	f	function:RecipeEdit
+handleChange	src/component/ingredientEdit.jsx	/^  function handleChange(changes) {$/;"	f	function:IngredientEdit
+handleIngredientAdd	src/component/RecipeEdit.jsx	/^  function handleIngredientAdd() {$/;"	f	function:RecipeEdit
+handleIngredientChange	src/component/RecipeEdit.jsx	/^  function handleIngredientChange(id, ingredient) {$/;"	f	function:RecipeEdit
+handleIngredientRemove	src/component/RecipeEdit.jsx	/^  function handleIngredientRemove(id) {$/;"	f	function:RecipeEdit
+handleRecipeAdd	src/App.jsx	/^    handleRecipeAdd: handleRecipeAdd,$/;"	p	class:App.recipeContextValue
 handleRecipeAdd	src/App.jsx	/^  function handleRecipeAdd() {$/;"	f	function:App
+handleRecipeChange	src/App.jsx	/^    handleRecipeChange: handleRecipeChange,$/;"	p	class:App.recipeContextValue
+handleRecipeChange	src/App.jsx	/^  function handleRecipeChange(id, recipe) {$/;"	f	function:App
+handleRecipeDelete	src/App.jsx	/^    handleRecipeDelete: handleRecipeDelete,$/;"	p	class:App.recipeContextValue
+handleRecipeDelete	src/App.jsx	/^  function handleRecipeDelete(id) {$/;"	f	function:App
+handleRecipeSelect	src/App.jsx	/^    handleRecipeSelect: handleRecipeSelect,$/;"	p	class:App.recipeContextValue
+handleRecipeSelect	src/App.jsx	/^  function handleRecipeSelect(id) {$/;"	f	function:App
 html	src/css/app.css	/^html {$/;"	s
 id	src/App.jsx	/^      id: uuidv4(),$/;"	p	class:App.handleRecipeAdd.newRecipe
+id	src/component/RecipeEdit.jsx	/^      id: uuidv4(),$/;"	p	class:RecipeEdit.handleIngredientAdd.newIngredients
 ingredients	src/App.jsx	/^      ingredients: [$/;"	p	class:App.handleRecipeAdd.newRecipe
-instructions	src/App.jsx	/^      instructions: ["Instr."],$/;"	p	class:App.handleRecipeAdd.newRecipe
+instructions	src/App.jsx	/^      instructions: [""],$/;"	p	class:App.handleRecipeAdd.newRecipe
 name	package.json	/^  "name": "react-recipe",$/;"	s
-name	src/App.jsx	/^      name: "New",$/;"	p	class:App.handleRecipeAdd.newRecipe
+name	src/App.jsx	/^      name: "",$/;"	p	class:App.handleRecipeAdd.newRecipe
+name	src/component/RecipeEdit.jsx	/^      name: "",$/;"	p	class:RecipeEdit.handleIngredientAdd.newIngredients
+newIngredients	src/component/RecipeEdit.jsx	/^    const newIngredients = {$/;"	c	class:RecipeEdit.handleIngredientAdd
 newRecipe	src/App.jsx	/^    const newRecipe = {$/;"	c	class:App.handleRecipeAdd
 private	package.json	/^  "private": true,$/;"	b
 production	package.json	/^    "production": [$/;"	a	object:browserslist
 react	package.json	/^    "react": "^17.0.1",$/;"	s	object:dependencies
 react-dom	package.json	/^    "react-dom": "^17.0.1",$/;"	s	object:dependencies
 react-scripts	package.json	/^    "react-scripts": "4.0.0",$/;"	s	object:dependencies
+recipeContextValue	src/App.jsx	/^  const recipeContextValue = {$/;"	c	class:App
 root	public/index.html	/^    <div id="root"><\/div>$/;"	I
 sampleRecipe	src/App.jsx	/^const sampleRecipe = [$/;"	C
 scripts	package.json	/^  "scripts": {$/;"	o
 servings	src/App.jsx	/^      servings: 1,$/;"	p	class:App.handleRecipeAdd.newRecipe
 start	package.json	/^    "start": "react-scripts start",$/;"	s	object:scripts
 test	package.json	/^    "test": "react-scripts test",$/;"	s	object:scripts
+textarea	src/css/app.css	/^textarea {$/;"	s
 uuid	package.json	/^    "uuid": "^8.3.1",$/;"	s	object:dependencies
 version	package.json	/^  "version": "0.1.0",$/;"	s
 web-vitals	package.json	/^    "web-vitals": "^0.2.4"$/;"	s	object:dependencies

@@ -4,6 +4,7 @@ import { RecipeContext } from "../App";
 
 export default function RecipeList({ recipes }) {
   const { handleRecipeAdd } = useContext(RecipeContext);
+
   return (
     <>
       <div className="recipe-list">

@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import IngredientEdit from "./ingredientEdit";
 import { RecipeContext } from "../App";
+import { v4 as uuidv4 } from "uuid";
 
 export default function RecipeEdit({ recipe }) {
-  const { handleRecipeChange } = useContext(RecipeContext);
+  const { handleRecipeChange, handleRecipeSelect } = useContext(RecipeContext);
 
   function handleChange(changes) {
     handleRecipeChange(recipe.id, { ...recipe, ...changes });
@@ -16,10 +17,29 @@ export default function RecipeEdit({ recipe }) {
     handleChange({ ingredients: newIngredients });
   }
 
+  function handleIngredientAdd() {
+    const newIngredients = {
+      id: uuidv4(),
+      name: "",
+      amount: "",
+    };
+    handleChange({ ingredients: [...recipe.ingredients, newIngredients] });
+  }
+  function handleIngredientRemove(id) {
+    handleChange({
+      ingredients: recipe.ingredients.filter((i) => i.id !== id),
+    });
+  }
+
   return (
     <div className="recipe-edit">
       <div className="recipe-edit__remove-button-container">
-        <button className="btn recipe-edit__remove-button">&times;</button>
+        <button
+          onClick={() => handleRecipeSelect(undefined)}
+          className="btn recipe-edit__remove-button"
+        >
+          &times;
+        </button>
       </div>
       <div className="recipe-edit__details-grid">
         <lable htmlFor="name" className="recipe-edit__lable">
@@ -87,12 +107,18 @@ export default function RecipeEdit({ recipe }) {
               key={ingredient.key}
               ingredient={ingredient}
               handleIngredientChange={handleIngredientChange}
+              handleIngredientRemove={handleIngredientRemove}
             />
           );
         })}
       </div>
       <div>
-        <button className="btn btn--primary btn--ing">Add Ingredient</button>
+        <button
+          onClick={() => handleIngredientAdd()}
+          className="btn btn--primary btn--ing"
+        >
+          Add Ingredient
+        </button>
       </div>
     </div>
   );
