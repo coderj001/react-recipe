@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import IngredientEdit from "./ingredientEdit";
+import { RecipeContext } from "../App";
 
 export default function RecipeEdit({ recipe }) {
+  const { handleRecipeChange } = useContext(RecipeContext);
+
+  function handleChange(changes) {
+    handleRecipeChange(recipe.id, { ...recipe, ...changes });
+  }
+
   return (
     <div className="recipe-edit">
       <div className="recipe-edit__remove-button-container">
@@ -16,6 +24,7 @@ export default function RecipeEdit({ recipe }) {
           id="name"
           className="recipe-edit__input"
           value={recipe.name}
+          onInput={(e) => handleChange({ name: e.target.value })}
         />
         <lable className="recipe-edit__lable" htmlFor="cookTime">
           Cook Time
@@ -26,6 +35,7 @@ export default function RecipeEdit({ recipe }) {
           id="cookTime"
           className="recipe-edit__input"
           value={recipe.cookTime}
+          onInput={(e) => handleChange({ cookTime: e.target.value })}
         />
         <lable className="recipe-edit__lable" htmlFor="servings">
           Servings
@@ -37,6 +47,9 @@ export default function RecipeEdit({ recipe }) {
           min="1"
           className="recipe-edit__input"
           value={recipe.servings}
+          onInput={(e) =>
+            handleChange({ servings: parseInt(e.target.servings) || "" })
+          }
         />
       </div>
       <br />
@@ -58,19 +71,9 @@ export default function RecipeEdit({ recipe }) {
         <div>Amount</div>
         <div>Delete</div>
         {recipe.ingredients.map((ingredient) => {
-          <div key={ingredient.id}>
-            <input
-              className="recipe-edit__input"
-              type="text"
-              value={ingredient.name}
-            />
-            <input
-              className="recipe-edit__input"
-              type="text"
-              value={ingredient.amount}
-            />
-            <button className="btn btn--danger">&times;</button>
-          </div>;
+          return (
+            <IngredientEdit key={ingredient.key} ingredient={ingredient} />
+          );
         })}
       </div>
       <div>
