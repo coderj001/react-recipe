@@ -9,6 +9,13 @@ export default function RecipeEdit({ recipe }) {
     handleRecipeChange(recipe.id, { ...recipe, ...changes });
   }
 
+  function handleIngredientChange(id, ingredient) {
+    const newIngredients = [...recipe.ingredients];
+    const index = newIngredients.findIndex((i) => i.id === id);
+    newIngredients[index] = ingredient;
+    handleChange({ ingredients: newIngredients });
+  }
+
   return (
     <div className="recipe-edit">
       <div className="recipe-edit__remove-button-container">
@@ -41,14 +48,14 @@ export default function RecipeEdit({ recipe }) {
           Servings
         </lable>
         <input
-          type="text"
+          type="number"
           name="servings"
           id="servings"
           min="1"
           className="recipe-edit__input"
           value={recipe.servings}
           onInput={(e) =>
-            handleChange({ servings: parseInt(e.target.servings) || "" })
+            handleChange({ servings: parseInt(e.target.value) || 1 })
           }
         />
       </div>
@@ -63,6 +70,10 @@ export default function RecipeEdit({ recipe }) {
         rows="10"
         className="recipe-edit__input"
         value={recipe.instructions.join().replaceAll(",", "\n")}
+        onInput={(e) => {
+          console.log(e.target.value.split("\n"));
+          handleChange({ instructions: e.target.value.split("\n") });
+        }}
       ></textarea>
       <br />
       <lable className="recipe-edit__lable">Ingredients</lable>
@@ -72,7 +83,11 @@ export default function RecipeEdit({ recipe }) {
         <div>Delete</div>
         {recipe.ingredients.map((ingredient) => {
           return (
-            <IngredientEdit key={ingredient.key} ingredient={ingredient} />
+            <IngredientEdit
+              key={ingredient.key}
+              ingredient={ingredient}
+              handleIngredientChange={handleIngredientChange}
+            />
           );
         })}
       </div>
